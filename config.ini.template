@@ -1,0 +1,5 @@
+[settings]
+url = https://example.com
+depth = 2
+stay_in_domain = yes
+report_file = email_report.txt
