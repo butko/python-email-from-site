@@ -140,11 +140,6 @@ def normalize_url(url: str) -> str:
 
 
 def get_host(url: str) -> str:
-    """
-    Возвращает host без ведущего www.
-    'www.donntu.ru' -> 'donntu.ru'
-    'fier.donntu.ru' -> 'fier.donntu.ru'
-    """
     host = urlparse(url).netloc.lower()
     # Отрезаем возможный порт (host:port)
     if ':' in host:
@@ -156,14 +151,6 @@ def get_host(url: str) -> str:
 
 def same_domain(url: str, base_host: str,
                 include_subdomains: bool = True) -> bool:
-    """
-    Проверяет, что URL относится к базовому домену.
-
-    include_subdomains = True  → разрешены домен и его поддомены
-                                  (donntu.ru, fier.donntu.ru, ...)
-    include_subdomains = False → разрешён только сам домен
-                                  (donntu.ru и www.donntu.ru, но НЕ fier.donntu.ru)
-    """
     host = get_host(url)
 
     if host == base_host:
