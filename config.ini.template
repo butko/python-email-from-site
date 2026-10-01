@@ -1,5 +1,11 @@
 [settings]
-url = https://example.com
+url = https://example.ru
 depth = 2
 stay_in_domain = yes
+include_subdomains = no
 report_file = email_report.txt
+
+# Расширения файлов, которые НЕ нужно скачивать и парсить.
+# Проверка идёт и по расширению URL, и по заголовку Content-Type.
+# Оставьте строку пустой, чтобы ничего не фильтровать.
+skip_extensions = pdf, doc, docx, xls, xlsx, ppt, pptx, zip, rar, 7z, tar, gz, jpg, jpeg, png, gif, svg, webp, bmp, ico, mp3, mp4, avi, mov, wmv, flv, mkv, exe, dmg, iso, apk
